@@ -29,6 +29,14 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# Pagination
+gem 'will_paginate', '~> 3.2', '>= 3.2.1'
+gem 'will_paginate-bootstrap4', '~> 0.2.2'
+
+#Faker
+gem 'faker', '~> 1.6', '>= 1.6.6'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
