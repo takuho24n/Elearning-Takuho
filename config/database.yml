@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-# MySQL. Versions 5.1.10 and up are supported.
-#
-# Install the MySQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem 'mysql2'
-#
-# And be sure to use new-style password hashing:
-#   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
-#
-=======
->>>>>>> ac14bf6... Third Commit_login
 default: &default
   adapter: mysql2
   encoding: utf8
@@ -22,19 +8,11 @@ default: &default
 
 development:
   <<: *default
-<<<<<<< HEAD
   database: taku-elearning_development
-=======
-  database: taku_elearning_development
->>>>>>> ac14bf6... Third Commit_login
 
 test:
   <<: *default
-<<<<<<< HEAD
   database: taku-elearning_test
-=======
-  database: taku_elearning_test
->>>>>>> ac14bf6... Third Commit_login
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
