@@ -1,11 +1,19 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-    <aside class="span">
-        <section>
-            <h1>
-                <%= gravatar_for @user %>
-                <%= @user.name %>
-            </h1>
-        </section>
-    </aside>
+    <div class="col-3">
+        <aside class="span">
+            <section>
+                <h1>
+                    <%= gravatar_for @user %>
+                    <%= @user.name %>
+                </h1>
+            </section>
+            <section>
+                <%= render  "shared/stats" %>
+            </section>
+        </aside>
+    </div>
+    <div class="col-9">
+        <%= render  "follow_form" if logged_in?%>
+    </div>
 </div>
