@@ -63,7 +63,6 @@ class UsersController < ApplicationController
 
   end
 
-<<<<<<< HEAD
   def only_loggedin_users
 
     redirect_to login_url unless logged_in?
@@ -78,8 +77,6 @@ class UsersController < ApplicationController
     current_user?(@user)
 
   end
-=======
->>>>>>> def9f15... Second Commit_signup
   
 
 end
