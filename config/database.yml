@@ -57,12 +57,6 @@ test:
 #
 production:
   <<: *default
-<<<<<<< HEAD
   database: taku-elearning_production
   username: taku-elearning
   password: <%= ENV['TAKU-ELEARNING_DATABASE_PASSWORD'] %>
-=======
-  database: taku_elearning_production
-  username: taku_elearning
-  password: <%= ENV['TAKU_ELEARNING_DATABASE_PASSWORD'] %>
->>>>>>> ac14bf6... Third Commit_login

@@ -1,8 +1,4 @@
 class PagesController < ApplicationController
-<<<<<<< HEAD
-  def home
-        
-=======
   
   def home
     
@@ -10,6 +6,5 @@ class PagesController < ApplicationController
       @user = current_user
     end      
   
->>>>>>> ac14bf6... Third Commit_login
   end 
 end
