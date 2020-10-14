@@ -20,7 +20,7 @@ class User < ApplicationRecord
   has_many :passive_relationships, foreign_key: "followed_id",
                                    class_name: "Relationship",
                                    dependent: :destroy
-  has_many :followers, through: :passive_relationships, source: :follower_id
+  has_many :followers, through: :passive_relationships, source: :follower
 
   def following?(other_user)
     active_relationships.find_by(followed_id: other_user.id)

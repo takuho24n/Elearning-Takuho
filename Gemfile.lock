@@ -197,36 +197,19 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   duktape
-<<<<<<< HEAD
   faker (~> 1.6, >= 1.6.6)
   jbuilder (~> 2.5)
   mysql2
-<<<<<<< HEAD
-=======
-  jbuilder (~> 2.5)
->>>>>>> 3d9dfa3... Inital Commit _signup
-=======
->>>>>>> 1058ab9... Second Commit_signup
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.4)
   sass-rails (~> 5.0)
   selenium-webdriver
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  sqlite3
->>>>>>> 3d9dfa3... Inital Commit _signup
-=======
->>>>>>> 1058ab9... Second Commit_signup
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
-<<<<<<< HEAD
   will_paginate (~> 3.2, >= 3.2.1)
   will_paginate-bootstrap4 (~> 0.2.2)
-=======
->>>>>>> 3d9dfa3... Inital Commit _signup
 
 RUBY VERSION
    ruby 2.6.6p146

@@ -21,4 +21,12 @@ User.create!(name: "Michael Reeves",
     password: password,
     password_confirmation: password)
 
+#Following relationships
+users = User.all
+user = Users.first
+following = users[2..50]
+follower = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
+
 end
