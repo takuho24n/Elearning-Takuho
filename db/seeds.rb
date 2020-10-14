@@ -23,7 +23,7 @@ User.create!(name: "Michael Reeves",
 
 #Following relationships
 users = User.all
-user = Users.first
+user = users.first
 following = users[2..50]
 follower = users[3..40]
 following.each { |followed| user.follow(followed) }
