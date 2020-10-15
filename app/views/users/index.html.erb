@@ -1,18 +1,30 @@
 <% provide(:title, "Users") %>
 <div class="form">
-    <h1 class="text-center">List of Users</h1>
-    <div class="container">
-        <ul class="users">
-            <% @users.each do |user| %>
-            <li>
-                <%= gravatar_for user, size: 52 %>
-                <%= link_to user.name, user %>
-                <%= link_to  'delete', user_path(user), method: :delete,
-                                        data: { confirm: "You sure?" } %>
-            </li>
-        </ul>
-        <div class="m-4 container">
+    <h1 class="text-center mb-4 display-4">List of Users</h1>
+    <div class="containter">
+        <div class="container m-4 d-flex justify-content-center">
             <%= will_paginate %>
         </div>
-  </div>
+        <ul class="users">
+            <% @users.each do |user| %>
+                <hr class="m-0">
+                <li>
+                    <span class="d-inline-flex">
+                        <%= gravatar_for user, size: 52 %>
+                        <%= link_to user.name, user, class: "mx-2" %>
+                        <%# link_to "| delete", user_path(user), method: :delete,
+                                                            data: { confirm: "You sure?" } %>
+                        <%= button_to user_path(user), method: :delete, class: "btn btn-dark btn-sm",
+                                                            data: { confirm: "You sure?" } do %>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        <% end %>
+                    </span>
+                </li>
+            <% end %>
+            <hr class="m-0">
+        </ul>
+        <div class="container m-4 d-flex justify-content-center">
+            <%= will_paginate %>
+        </div>
+    </div>
 </div>
