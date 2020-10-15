@@ -1,3 +1,20 @@
+
+<% provide(:title, 'Home') %>
+<% if logged_in? %>
+    <div class="row">
+        <aside class="col-3">
+            <section>
+                <%= render 'shared/user_info' %>
+            </section>
+        </aside>
+    </div>
+<% else %>
+    <div class="jumbotron text-center bg-dark text-white pt-4 px-100">
+        <h1 class="display-4 mt-4">E-Learning</h1>
+    </div>
+<% end %>
+
+
 <li class="nav-item">
     <%= link_to "Signup", signup_path,class: "nav-link" %>
 </li>
