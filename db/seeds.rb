@@ -30,3 +30,13 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+#Category
+Category.create!(title: "Cookies",
+  description: "This is a sample category.")
+
+17.times do |n|
+  title = Faker::Beer.brand
+  description = "Do you like #{n+2} to drink?"
+  Category.create!(title: title, description: description)
+end

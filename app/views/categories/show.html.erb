@@ -1,0 +1,194 @@
+<div class="container py-5">
+     
+    <ul class="nav nav-pills nav-warning float-right justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="/categories">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=1">Learned</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=0">Not learned</a>
+        </li>
+    </ul>
+
+    <h1>Categories<small class="text-muted font-weight-normal">(18)</small></h1>
+
+    <div class="row object-list">
+            
+        <div class="col-md-6 mb-4">
+            <article class="card p-2 h-100">
+                <div class="card-body">
+                    <div class="badge badge-secondary float-right">Scored 2 of 5</div>
+                    <h4 class="card-title">
+                        <% @categories.each do |category| %>
+                            <%= category.title %>
+                        
+                    </h4>
+                    <p class="card-text">
+                        <strong>[3 words]</strong>
+                         <% @categories.each do |category| %>
+                            <%= category.description %>
+                       <% end %>
+                    </p>
+                    <div class="mt-5">
+                        <a class="btn btn-outline-secondary btn-block" href="/lessons/120">
+                            <i class="glyphicon glyphicon-record"></i>
+                            Show result
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+           <% end %>
+        
+    </div>
+
+    <%= will_paginate @categories %>
+
+</div>
+    
+
+
+<div class="container m-4 d-flex justify-content-center">
+    <%= will_paginate @categories %>
+</div>
+
+<%#div class="container py-5">
+     
+    <ul class="nav nav-pills nav-warning float-right justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="/categories">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=1">Learned</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=0">Not learned</a>
+        </li>
+    </ul>
+
+    <h1>Categories<small class="text-muted font-weight-normal">(10)</small></h1>
+        <div class="row object-list">
+            <div class="col-md-6 mb-4">
+                <article class="card p-2 h-100">
+                    <div class="card-body">
+
+                            <div class="badge badge-secondary float-right">Scored 0 of 1</div>
+                                <h4 class="card-title">Food</h4>
+                                <p class="card-text">
+                            <strong>[1 words]</strong>
+                            foods
+                        </p>
+                        <div class="mt-5">
+                                <a class="btn btn-outline-secondary btn-block" href="/lessons/114">
+        <i class="glyphicon glyphicon-record"></i>
+        Show result
+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 mb-4">
+                <article class="card p-2 h-100">
+                    <div class="card-body">
+
+                            <div class="badge badge-secondary float-right">Scored 0 of 1</div>
+                        <h4 class="card-title">cat</h4>
+                        <p class="card-text">
+                            <strong>[1 words]</strong>
+                            description
+                        </p>
+                        <div class="mt-5">
+                                <a class="btn btn-outline-secondary btn-block" href="/lessons/119">
+        <i class="glyphicon glyphicon-record"></i>
+        Show result
+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 mb-4">
+                <article class="card p-2 h-100">
+                    <div class="card-body">
+
+                            <div class="badge badge-secondary float-right">Scored 2 of 5</div>
+                        <h4 class="card-title">Fruits</h4>
+                        <p class="card-text">
+                            <strong>[3 words]</strong>
+                            This is a quiz about fruits
+                        </p>
+                        <div class="mt-5">
+                                <a class="btn btn-outline-secondary btn-block" href="/lessons/120">
+        <i class="glyphicon glyphicon-record"></i>
+        Show result
+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 mb-4">
+                <article class="card p-2 h-100">
+                    <div class="card-body">
+
+                            <div class="badge badge-secondary float-right">Scored 2 of 5</div>
+                        <h4 class="card-title">Shan adds cat</h4>
+                        <p class="card-text">
+                            <strong>[2 words]</strong>
+                            i added the category
+                        </p>
+                        <div class="mt-5">
+                                <a class="btn btn-outline-secondary btn-block" href="/lessons/124">
+        <i class="glyphicon glyphicon-record"></i>
+        Show result
+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 mb-4">
+                <article class="card p-2 h-100">
+                    <div class="card-body">
+
+                            <div class="badge badge-secondary float-right">Scored 1 of 2</div>
+                        <h4 class="card-title">Filipino101</h4>
+                        <p class="card-text">
+                            <strong>[2 words]</strong>
+                            LETS LETS FILIPINO
+
+                        </p>
+                        <div class="mt-5">
+                                <a class="btn btn-outline-secondary btn-block" href="/lessons/123">
+        <i class="glyphicon glyphicon-record"></i>
+        Show result
+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 mb-4">
+                <article class="card p-2 h-100">
+                    <div class="card-body">
+
+                            <div class="badge badge-secondary float-right">Scored 3 of 3</div>
+                        <h4 class="card-title">Test</h4>
+                        <p class="card-text">
+                            <strong>[2 words]</strong>
+                            test
+                        </p>
+                        <div class="mt-5">
+                                <a class="btn btn-outline-secondary btn-block" href="/lessons/126">
+        <i class="glyphicon glyphicon-record"></i>
+        Show result
+</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+    </div>
+    <div class="paginate text-center mt-5">
+        <nav><ul class="pagination"><li class="page-item"><a class="page-link" rel="prev" href="/categories?page=2">&larr;</a></li> <li class="page-item"><a class="page-link" href="/categories?page=1">1</a></li> <li class="page-item"><a class="page-link" rel="prev" href="/categories?page=2">2</a></li> <li class="page-item active"><span class="page-link">3</span></li> <li class="page-item"><a class="page-link" rel="next" href="/categories?page=4">4</a></li> <li class="page-item"><a class="page-link" href="/categories?page=5">5</a></li> <li class="page-item"><a class="page-link" rel="next" href="/categories?page=4">&rarr;</a></li></ul></nav>
+    </div>
+
+            </div #%>
+    
