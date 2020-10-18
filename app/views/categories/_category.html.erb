@@ -1,0 +1,48 @@
+<div class="container py-5">
+     
+    <ul class="nav nav-pills nav-warning float-right justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="/categories">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=1">Learned</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=0">Not learned</a>
+        </li>
+    </ul>
+
+    <h1>Categories<small class="text-muted font-weight-normal">(18)</small></h1>
+
+    <div class="row object-list">
+            
+        <div class="col-md-6 mb-4">
+            <article class="card p-2 h-100">
+                <div class="card-body">
+                    <div class="badge badge-secondary float-right">Scored 2 of 5</div>
+                    <h4 class="card-title">
+                        <% @all_categories.each do |category| %>
+                            <%= category.name %>
+                        <% end %>
+                    </h4>
+                    <p class="card-text">
+                        <strong>[3 words]</strong>
+                         <% @all_categories.each do |category| %>
+                            <%= category.description %>
+                    </p>
+                    <div class="mt-5">
+                        <a class="btn btn-outline-secondary btn-block" href="/lessons/120">
+                            <i class="glyphicon glyphicon-record"></i>
+                            Show result
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+           
+    </div>
+
+    <%= will_paginate @categories %>
+
+</div>
+    
