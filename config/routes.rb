@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   resources :users
-
   resources :sessions, only: [:new, :create, :destroy]
 
   # /login
@@ -26,5 +25,10 @@ Rails.application.routes.draw do
   # For follow and unfollow
   resources :relationships, only: [:create, :destroy]
 
+  #admin
+  resources :admins, only: [:index, :show]
+    namespace :admin do
+      resources :admins, only: [:index, :show, :create, :new, :edit, :destroy]
+    end
   
 end
