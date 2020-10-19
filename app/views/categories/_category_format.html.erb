@@ -1,0 +1,25 @@
+<div class="row object-list">
+    <% @categories.each do|category|%>
+        <div class="col-md-6 mb-4">
+            <article class="card p-2 h-100">
+                <div class="card-body">
+                    <div class="badge badge-secondary float-right">Scored 2 of 5</div>
+                    <h4 class="card-title">
+                        <%= category.title %>
+                    </h4>
+                    <p class="card-text">
+                        <strong>[3 words]</strong>
+                            <%= category.description %>
+                    </p>
+                    <div class="mt-5">
+                        <a class="btn btn-outline-secondary btn-block" href="/lessons/120">
+                            <i class="glyphicon glyphicon-record"></i>
+                            Show result
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    <% end %>  
+    </div>
+    
