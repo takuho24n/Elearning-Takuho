@@ -1,0 +1,15 @@
+<% provide(:title, "Edit Category") %>
+<div class="form">
+    <h1 class="text-center">Edit your profile</h1>
+    <div class="container">
+        <%= form_for @Category do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+
+            <%= f.label :description %>
+            <%= f.text_field :description, class: "form-control" %>
+
+            <%= f.submit "Update", class: "btn btn-block btn-primary" %>
+        <% end %>
+    </div>
+</div>

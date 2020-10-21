@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # Index with Will_Paginate
     # @variable = Model.paginate(page: params[current_page], per_page: # of items displayed)
     @users = User.paginate(page: params[:page], per_page: 10)
-    @users = User.all.order("created_at_DESC")
+
   end
 
   def new
@@ -75,10 +75,6 @@ class UsersController < ApplicationController
       # 1. Check the user ID in order to check who is online right now
       # 2. Go to Home page IF it's not current user
       redirect_to root_url unless current_user?(@user)
-    end
-
-    def admin_user
-      redirect_to root_path unless current_user.admin?
     end
     
 end

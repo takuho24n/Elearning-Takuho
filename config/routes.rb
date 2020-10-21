@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/signup', to: 'users#new'
 
-  resources :users
+  # resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
   # /login
@@ -26,9 +26,15 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   #admin
-  resources :admins, only: [:index, :show]
-    namespace :admin do
-      resources :admins, only: [:index, :show, :create, :new, :edit, :destroy]
-    end
-  
+  get '/admin', to: 'admin/categories#index'
+  namespace :admin do
+    resources :categories, only: [:index, :show, :create, :new, :edit, :destroy]
+  end
+
+  resources :categories do
+    member do
+      get :titles, :descriptions
+  end
+end
+
 end

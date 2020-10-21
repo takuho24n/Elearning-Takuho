@@ -4,9 +4,7 @@ class PagesController < ApplicationController
     
     if logged_in?
       @user = current_user
-    else admin_user?
-      @user = admin_user
     end      
-  
+
   end 
 end
