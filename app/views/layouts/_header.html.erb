@@ -27,7 +27,7 @@
                     <%= link_to "Category", category_path, class: "nav-link" %>
                 </li>
 
-                <% if current_user == @user || current_user.administrator %>
+                <% if current_user.administrator %>
                     <li class="nav-item">
                         <%= link_to "Manage Category", admin_categories_path, class: "nav-link" %>
                     </li>

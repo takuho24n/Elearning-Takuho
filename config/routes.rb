@@ -26,11 +26,14 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   #admin
-  get '/admin', to: 'admin/categories#index'
+   get '/admin', to: 'admin/categories#index'
+   get '/admin/categories#index', to: 'admin/categories#edit'
+
+
   namespace :admin do
     resources :categories, only: [:index, :show, :create, :new, :edit, :destroy]
   end
-
+  
   resources :categories do
     member do
       get :titles, :descriptions

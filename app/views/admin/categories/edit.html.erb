@@ -1,8 +1,9 @@
 <% provide(:title, "Edit Category") %>
 <div class="form">
-    <h1 class="text-center">Edit your profile</h1>
+    <h1 class="text-center">Edit Category</h1>
     <div class="container">
-        <%= form_for @Category do |f| %>
+        <% @category = Category.new unless @category %>
+        <%= form_for @category do |f| %>
             <%= f.label :title %>
             <%= f.text_field :title, class: "form-control" %>
 

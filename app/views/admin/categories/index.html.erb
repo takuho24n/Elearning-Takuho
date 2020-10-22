@@ -19,6 +19,10 @@
                                                             data: { confirm: "You sure?" } do %>
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         <% end %>
+                        <%= button_to edit_admin_category_path(category), method: :edit, class: "btn btn-warning btn-sm",
+                                                            data: { confirm: "You sure?" } do %>
+                        edit
+                        <% end %>
                     </span>
                 </li>
             <% end %>
