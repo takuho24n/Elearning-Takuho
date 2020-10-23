@@ -20,24 +20,24 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
       if @category.save
-        redirect_to  'admin/categories/index'
-     else
-       render 'admin/categories/new'
+        redirect_to admin_categories_url
+      else
+        render 'new'
      end
   end
 
   def edit
     #@categories = Category.all
-    @categories = Category.find(params[:id])
+    @category = Category.find_by(id: params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
+    @category = Category.find_by(id: params[:id])
 
     if @category.update_attributes(category_params)
-      redirect_to 'index'
+      redirect_to edit_admin_categories_url
     else
-      render 'admin/categoris/edit'
+      render 'edit'
     end
 
   end

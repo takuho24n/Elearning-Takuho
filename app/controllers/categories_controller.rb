@@ -20,15 +20,15 @@ before_action :only_loggedin_users
   def create
     @category = Category.new(category_params)
       if @category.save
-        redirect_to  'admin/categories/index'
+        redirect_to   admin_categories_url
      else
-       render 'admin/categories/new'
+       render 'new'
      end
   end
 
   def edit
     #@categories = Category.all
-    @categories = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 
   def update

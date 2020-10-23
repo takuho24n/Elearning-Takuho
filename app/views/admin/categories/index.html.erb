@@ -23,7 +23,7 @@
                         <%= link_to category.description, admin_category_path(category), class: "mx-2" %>
                         <%# link_to "| delete", user_path(user), method: :delete,
                                                             data: { confirm: "You sure?" } %>
-                         <%= link_to edit_admin_category_path(category), class: "btn btn-warning btn-sm" do %>
+                         <%= button_to edit_admin_category_path(category), class: "btn btn-warning btn-sm" do %>
                         edit
                         <% end %>
                         <%= button_to admin_category_path(category), method: :delete, class: "btn btn-dark btn-sm",
