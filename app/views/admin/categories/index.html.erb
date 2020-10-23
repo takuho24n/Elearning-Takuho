@@ -5,6 +5,14 @@
 <div class="form">
     <h1 class="text-center mb-4 display-4">List of Categories</h1>
     <div class="containter">
+        <ul class="nav nav-pills nav-warning float-right justify-content-end">
+            <li class="nav-item">
+                <%#= link_to new_admin_category_path(category) class: "btn btn-warning btn-sm" do%>
+                Create
+                
+                <a class="nav-link active" href="categories/new">Create</a>
+            </li>
+        </ul>
         <div class="container m-4 d-flex justify-content-center"></div>
         <ul class="categories">
             <% @categories.each do|category|%>
@@ -15,14 +23,14 @@
                         <%= link_to category.description, admin_category_path(category), class: "mx-2" %>
                         <%# link_to "| delete", user_path(user), method: :delete,
                                                             data: { confirm: "You sure?" } %>
-                        <%= button_to category_path(category), method: :delete, class: "btn btn-dark btn-sm",
-                                                            data: { confirm: "You sure?" } do %>
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        <% end %>
-                        <%= button_to edit_admin_category_path(category), method: :edit, class: "btn btn-warning btn-sm",
-                                                            data: { confirm: "You sure?" } do %>
+                         <%= link_to edit_admin_category_path(category), class: "btn btn-warning btn-sm" do %>
                         edit
                         <% end %>
+                        <%= button_to admin_category_path(category), method: :delete, class: "btn btn-dark btn-sm",
+                                                            data: { confirm: "You sure?" } do %>
+                            Delete
+                        <% end %>
+                       
                     </span>
                 </li>
             <% end %>

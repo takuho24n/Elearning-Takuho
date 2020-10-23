@@ -27,11 +27,13 @@ Rails.application.routes.draw do
 
   #admin
    get '/admin', to: 'admin/categories#index'
-   get '/admin/categories#index', to: 'admin/categories#edit'
-
+   post '/admin/categories/:id/edit', to: 'admin/categories#edit'
+   patch '/admin/categories/:id/edit', to: 'categories#update'
+   get '/admin/categories/:id/edit', to: 'admin/categories#new'
 
   namespace :admin do
-    resources :categories, only: [:index, :show, :create, :new, :edit, :destroy]
+    #resources :categories
+    resources :categories
   end
   
   resources :categories do
