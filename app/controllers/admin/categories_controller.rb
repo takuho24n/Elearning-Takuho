@@ -1,5 +1,4 @@
 class Admin::CategoriesController < ApplicationController
-
   before_action :only_loggedin_users
   before_action :admin_user
   
@@ -32,10 +31,10 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find(params[:id])
 
     if @category.update_attributes(category_params)
-      redirect_to admin_categories_url
+      redirect_to new_admin_categories_url(@category)
     else
       render 'edit'
     end

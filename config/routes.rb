@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   #admin
    get '/admin', to: 'admin/categories#index'
    post '/admin/categories/:id/edit', to: 'admin/categories#edit'
-   patch '/admin/categories/:id/edit', to: 'categories#update'
+   patch '/admin/categories/:id/edit', to: 'admin/categories#update'
    get '/admin/categories/:id/edit', to: 'admin/categories#new'
 
   namespace :admin do

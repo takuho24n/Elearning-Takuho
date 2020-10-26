@@ -25,7 +25,7 @@ before_action :only_loggedin_users
   def create
     @category = Category.new(category_params)
       if @category.save
-        redirect_to   admin_categories_url
+        redirect_to  admin_categories_url(@category)
      else
        render 'new'
      end
@@ -33,7 +33,7 @@ before_action :only_loggedin_users
 
 
   def update
-    @category = Category.find(params[:id])
+    @category = Category.find_by(params[:id])
       if @category.update_attributes(category_params)
         redirect_to 'index'
       else

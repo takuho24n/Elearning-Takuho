@@ -1,4 +1,5 @@
-<%= form_with model: @category do |f| %>
+<% @category = Category.new unless @category %>
+<%= form_for @category do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, class: "form-control" %>
 
