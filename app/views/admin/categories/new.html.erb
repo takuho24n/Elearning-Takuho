@@ -2,15 +2,8 @@
 <div class="form">
     <h1 class="text-center">Create a New Category</h1>
     <div class="container">
-        <% @category = Category.new unless @category %>
-        <%= form_for @category do |f| %>
-            <%= f.label :title %>
-            <%= f.text_field :title, class: "form-control" %>
-
-            <%= f.label :description %>
-            <%= f.text_field :description, class: "form-control" %>
-        <br>
-            <%= f.submit "Create", class: "btn btn-block btn-primary" %>
-        <% end %>
+    <%= render  'form' %>
+        <%# @category = Category.new unless @category %>
+        <%# end %>
     </div>
 </div>

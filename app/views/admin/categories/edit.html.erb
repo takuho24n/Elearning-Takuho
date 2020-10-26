@@ -2,16 +2,7 @@
 <div class="form">
     <h1 class="text-center">Edit Category</h1>
     <div class="container">
-        <% @category = Category.new unless @category %>
-        <%#= form_for @category do |f| %>
-        <%= form_with model: @category do |f| %>
-            <%= f.label :title %>
-            <%= f.text_field :title, class: "form-control" %>
-
-            <%= f.label :description %>
-            <%= f.text_field :description, class: "form-control" %>
-            <br>
-            <%= f.submit "Update", class: "submitBtn" %>
-        <% end %>
+        <%# @category = Category.new unless @category %>
+        <%= render 'form' %>
     </div>
 </div>

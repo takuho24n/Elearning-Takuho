@@ -2,21 +2,26 @@ class Admin::CategoriesController < ApplicationController
 
   before_action :only_loggedin_users
   before_action :admin_user
-
-  def show
-    @categories = Category.paginate(page: params[:page], per_page: 10)
-    @categories = Category.find(params[:id])
-  end
-    
+  
   def index
     @categories = Category.all
     @categories = Category.paginate(page: params[:page], per_page: 10)
+  end
+
+  def show
+    @categories = Category.paginate(page: params[:page], per_page: 10)
+    #@categories = Category.find(params[:id])
   end
 
   def new
     @categories = Category.new
   end
 
+  def edit
+    #@categories = Category.all
+    @category = Category.find(params[:id])
+  end
+  
   def create
     @category = Category.new(category_params)
       if @category.save
@@ -26,16 +31,11 @@ class Admin::CategoriesController < ApplicationController
      end
   end
 
-  def edit
-    #@categories = Category.all
-    @category = Category.find_by(id: params[:id])
-  end
-
   def update
     @category = Category.find_by(id: params[:id])
 
     if @category.update_attributes(category_params)
-      redirect_to edit_admin_categories_url
+      redirect_to admin_categories_url
     else
       render 'edit'
     end
@@ -44,7 +44,7 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     Category.find(params[:id]).destroy
-    redirect_to categories_url
+    redirect_to admin_categories_url
   end
 
   private

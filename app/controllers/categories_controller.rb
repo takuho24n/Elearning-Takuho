@@ -17,6 +17,11 @@ before_action :only_loggedin_users
     @category = Category.new
   end
 
+  def edit
+    #@categories = Category.all
+    @category = Category.find(params[:id])
+  end
+
   def create
     @category = Category.new(category_params)
       if @category.save
@@ -26,23 +31,19 @@ before_action :only_loggedin_users
      end
   end
 
-  def edit
-    #@categories = Category.all
-    @category = Category.find(params[:id])
-  end
 
   def update
     @category = Category.find(params[:id])
       if @category.update_attributes(category_params)
         redirect_to 'index'
       else
-        render 'admin/categoris/edit'
+        render admin_category_url
       end
   end
 
   def destroy
     Category.find(params[:id]).destroy
-    redirect_to categories_url
+    redirect_to admin_categories_url
   end
 
   private
