@@ -1,6 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   before_action :only_loggedin_users
   before_action :admin_user
+  before_action :require_admin
   
   def index
     @categories = Category.all
@@ -13,7 +14,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def new
-    @categories = Category.new
+    @category = Category.new
   end
 
   def edit
@@ -24,8 +25,10 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
       if @category.save
+        flash[:success] = "Save successfully"
         redirect_to admin_categories_url
       else
+        #flash[:danger = "Invaild content. Try again"
         render 'new'
      end
   end
@@ -34,7 +37,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update_attributes(category_params)
-      redirect_to new_admin_categories_url(@category)
+      redirect_to admin_category_url
     else
       render 'edit'
     end

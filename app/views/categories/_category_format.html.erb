@@ -4,6 +4,23 @@
             <article class="card p-2 h-100">
                 <div class="card-body">
                     <div class="badge badge-secondary float-right">Scored 2 of 5</div>
+                        <% if current_user.administrator? %>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <%= button_to edit_admin_category_path(category), method: :get, class: "btn btn-warning btn-sm" do %>
+                                            edit
+                                        <% end %>
+                                    </td>
+                                    <td>
+                                        <%= button_to admin_category_path(category), method: :delete, class: "btn btn-dark btn-sm",
+                                                            data: { confirm: "You sure?" } do %>
+                                            Delete
+                                        <% end %>
+                                    </td>
+                                </tr>
+                            </table>
+                        <% end %>
                     <h4 class="card-title">
                         <%= category.title %>
                     </h4>

@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   #Category
-  get '/category', to: 'categories#show'
+  #get '/category', to: 'categories#show'
+  resources :categories
 
   # Follow Stats
   resources :users do
@@ -26,10 +27,10 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   #admin
-   get '/admin', to: 'admin/categories#index'
-   post '/admin/categories/:id/edit', to: 'admin/categories#edit'
-   patch '/admin/categories/:id/edit', to: 'admin/categories#update'
-   get '/admin/categories/:id/edit', to: 'admin/categories#new'
+  #  get '/admin', to: 'admin/categories#index'
+  #  post '/admin/categories/:id/edit', to: 'admin/categories#edit'
+  #  patch '/admin/categories/:id/edit', to: 'admin/categories#update'
+  #  get '/admin/categories/:id/edit', to: 'admin/categories#new'
 
   namespace :admin do
     #resources :categories

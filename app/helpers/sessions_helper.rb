@@ -27,4 +27,13 @@ module SessionsHelper
     redirect_to login_url unless logged_in?
   end
 
+  def require_admin
+    unless current_user.administrator?
+      redirect_to root_path
+    end
+  end
+
+  def is_admin?
+  end
+
 end

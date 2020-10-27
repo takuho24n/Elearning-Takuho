@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # before EDIT & UPDATE, check only logged in users -> only logged in users can edit and update
   before_action :only_loggedin_users, only: [:edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
+  before_action :require_admin, only: [:destroy]
 
   def index
     # @users = User.all
