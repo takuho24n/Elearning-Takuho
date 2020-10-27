@@ -14,10 +14,16 @@
                         <%= link_to user.name, user, class: "mx-2" %>
                         <%# link_to "| delete", user_path(user), method: :delete,
                                                             data: { confirm: "You sure?" } %>
-                        <%= button_to user_path(user), method: :delete, class: "btn btn-dark btn-sm",
+                        <%#= button_to user_path(user), method: :delete, class: "btn btn-dark btn-sm",
                                                             data: { confirm: "You sure?" } do %>
-                            <i class="fa fa-trash" aria-hidden="true"></i>
+                            <%#i class="fa fa-trash" aria-hidden="true"></i>
                         <% end %>
+                            <% if current_user.administrator? %>
+                                <%= button_to user_path(user), method: :delete, class: "btn btn-dark btn-sm",
+                                                            data: { confirm: "You sure?" } do %>
+                                        Delete
+                                 <% end %>
+                            <% end %>
                     </span>
                 </li>
             <% end %>

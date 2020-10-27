@@ -2,12 +2,14 @@ class UsersController < ApplicationController
   # before EDIT & UPDATE, check only logged in users -> only logged in users can edit and update
   before_action :only_loggedin_users, only: [:edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
+  before_action :require_admin, only: [:destroy]
 
   def index
     # @users = User.all
     # Index with Will_Paginate
     # @variable = Model.paginate(page: params[current_page], per_page: # of items displayed)
     @users = User.paginate(page: params[:page], per_page: 10)
+
   end
 
   def new
@@ -75,4 +77,5 @@ class UsersController < ApplicationController
       # 2. Go to Home page IF it's not current user
       redirect_to root_url unless current_user?(@user)
     end
+    
 end

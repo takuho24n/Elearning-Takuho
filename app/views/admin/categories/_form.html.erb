@@ -1,0 +1,10 @@
+<% @category = Category.new unless @category %>
+<%= form_for [:admin, @category] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "form-control" %>
+  <br>
+  <%= f.submit "Create", class: "submitBtn" %>
+<% end %>

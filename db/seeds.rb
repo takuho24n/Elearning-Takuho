@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!(name: "Michael Reeves",
-  email: "michael@email.com",
+User.create!(name: "Takuho N",
+  email: "takuho@email.com",
   password: "password",
-  password_confirmation: "password")
+  password_confirmation: "password",
+  administrator: true)
 
 99.times do |n|
   name = Faker::Food.dish

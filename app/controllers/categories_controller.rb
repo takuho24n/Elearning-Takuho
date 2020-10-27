@@ -1,17 +1,14 @@
 class CategoriesController < ApplicationController
+  before_action :only_loggedin_users
 
-before_action :only_loggedin_users
+  def index
+    # @categories = Category.all
+    @categories = Category.paginate(page: params[:page], per_page: 10)
+  end
 
-def show
-    @categories = Category.paginate(page: params[:page], per_page: 6)
-end
-
-def index
-    @categories = Category.find(params[:title_id])
-    @categories = Category.find(params[:description_id])
-
-    @categories = Category.paginate(page: params[:page], per_page: 6)
-end
+  def show
+    @categories = Category.paginate(page: params[:page], per_page: 10)
+  end
 
 end
 

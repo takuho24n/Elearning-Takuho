@@ -1,0 +1,23 @@
+<div class="container py-5">
+     
+    <ul class="nav nav-pills nav-warning float-right justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="/categories">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=1">Learned</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories?learned=0">Not learned</a>
+        </li>
+    </ul>
+
+    <h1>Categories<small class="text-muted font-weight-normal">(18)</small></h1>
+
+    <div class="container py-5">
+        <%= render  "categories/category_format" %>
+    </div>
+
+    <%= will_paginate @categories %>
+
+</div>

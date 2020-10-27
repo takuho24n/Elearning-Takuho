@@ -1,0 +1,34 @@
+<h1>Hello, Admin!</h1>
+<hr>
+
+<% provide(:title, "Manage Categories") %>
+<div class="form">
+    <h1 class="text-center mb-4 display-4">List of Categories</h1>
+    <div class="containter">
+        <ul class="nav nav-pills nav-warning float-right justify-content-end">
+            <li class="nav-item">
+                <%#= link_to new_admin_category_path(category) class: "btn btn-warning btn-sm" do%>
+                
+                <a class="nav-link active" href="categories/new">Create</a>
+            </li>
+        </ul>
+        <div class="container m-4 d-flex justify-content-center"></div>
+        <ul class="categories">
+            <% @categories.each do|category|%>
+                <hr class="m-0">
+                
+                    <span class="d-inline-flex">
+                        <%= render  "categories/category_format" %>
+                        
+                    
+                       
+                    </span>
+                
+            <% end %>
+            <hr class="m-0">
+        </ul>
+        <div class="container m-4 d-flex justify-content-center">
+            <%= will_paginate %>
+        </div>
+    </div>
+</div>
