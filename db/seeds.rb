@@ -36,8 +36,37 @@ followers.each { |follower| follower.follow(user) }
 Category.create!(title: "Cookies",
   description: "This is a sample category.")
 
-17.times do |n|
-  title = Faker::Beer.brand
-  description = "Do you like #{n+2} to drink?"
-  Category.create!(title: title, description: description)
-end
+  20.times do |n|
+    title = Faker::Beer.brand
+    description = "Do you like #{n+2} to drink?"
+    words = Faker::Beer.style
+    
+    category = Category.create!(title: title, description: description)
+    
+    word = Word.create!(words: words, category_id: category.id )
+  end
+
+ 
+ #words
+  Word.create!(words: "Orange",
+  category_id: 1)
+
+  Word.create!(words: "Pink Orange",
+  category_id: 1)
+
+  Word.create!(words: "Yellow Orange",
+  category_id: 2)
+
+  Word.create!(words: "Spicy Orange",
+    category_id: 2)
+
+  Word.create!(words: "Bitter Orange",
+    category_id: 3)
+
+  Word.create!(words: "Salty Orange",
+    category_id: 4)
+# 30.times do |n|
+#   words = Faker::Beer.style
+#   category_id = [1..10]
+#   Word.create!(words: words, category_id: category_id )
+# end

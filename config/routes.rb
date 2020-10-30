@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #Category
   #get '/category', to: 'categories#show'
   resources :categories
+  resources :words
 
   # Follow Stats
   resources :users do
@@ -34,7 +35,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     #resources :categories
-    resources :categories
+    resources :categories do
+      resources :words do
+      end
+    end
   end
   
   resources :categories do

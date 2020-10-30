@@ -13,22 +13,18 @@
             </li>
         </ul>
         <div class="container m-4 d-flex justify-content-center"></div>
-        <ul class="categories">
+      
+
             <% @categories.each do|category|%>
-                <hr class="m-0">
-                
+             
                     <span class="d-inline-flex">
-                        <%= render  "categories/category_format" %>
-                        
-                    
-                       
+                        <%= render  "categories/category_format" %>   
                     </span>
                 
             <% end %>
-            <hr class="m-0">
-        </ul>
+        
         <div class="container m-4 d-flex justify-content-center">
-            <%= will_paginate %>
+            <%= will_paginate @categories %>
         </div>
     </div>
 </div>

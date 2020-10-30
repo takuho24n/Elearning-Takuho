@@ -1,11 +1,8 @@
 <div class="row object-list">
-    <% @categories.each do|category|%>
         <div class="col-md-6 mb-4">
             <article class="card p-2 h-100">
                 <div class="card-body">
-
-                    <%# <div class="badge badge-secondary float-right">
-                        <span><b>Words:</b> <%= @category.words.count %>
+                    <div class="badge badge-secondary float-right">Scored 2 of 5</div>
                         <% if current_user.administrator? %>
                             <table>
                                 <tr>
@@ -20,9 +17,6 @@
                                             Delete
                                         <% end %>
                                     </td>
-                                    <td>
-                                        <%= link_to "words", admin_category_words_path(category, @word), method: :get, class: "btn btn-success btn-sm" %>
-                                    </td>
                                 </tr>
                             </table>
                         <% end %>
@@ -35,13 +29,12 @@
                     </p>
                     <div class="mt-5">
                         <a class="btn btn-outline-secondary btn-block" href="/lessons/120">
-                            <%#<i class="glyphicon glyphicon-record"></i> %>
-                            Learn
+                            <i class="glyphicon glyphicon-record"></i>
+                            Show result
                         </a>
                     </div>
                 </div>
             </article>
         </div>
-    <% end %>  
-</div>
+    </div>
     
