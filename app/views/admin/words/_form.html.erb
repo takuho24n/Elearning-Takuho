@@ -1,4 +1,3 @@
-<%# <% @word = Category.new unless @word %> 
 <%= form_for [:admin, @category, @word] do |f| %>
     <%= f.label :word %>   
     <%= f.text_field :words, class: "form-control" %>

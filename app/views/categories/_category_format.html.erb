@@ -6,26 +6,7 @@
 
                     <%# <div class="badge badge-secondary float-right">
                         <span><b>Words:</b> <%= @category.words.count %>
-                        <% if current_user.administrator? %>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <%= button_to edit_admin_category_path(category), method: :get, class: "btn btn-warning btn-sm" do %>
-                                            edit
-                                        <% end %>
-                                    </td>
-                                    <td>
-                                        <%= button_to admin_category_path(category), method: :delete, class: "btn btn-dark btn-sm",
-                                                            data: { confirm: "You sure?" } do %>
-                                            Delete
-                                        <% end %>
-                                    </td>
-                                    <td>
-                                        <%= link_to "words", admin_category_words_path(category, @word), method: :get, class: "btn btn-success btn-sm" %>
-                                    </td>
-                                </tr>
-                            </table>
-                        <% end %>
+                       
                     <h4 class="card-title">
                         <%= category.title %>
                     </h4>
