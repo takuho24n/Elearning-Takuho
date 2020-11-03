@@ -3,24 +3,10 @@
         <div class="col-md-6 mb-4">
             <article class="card p-2 h-100">
                 <div class="card-body">
-                    <div class="badge badge-secondary float-right">Scored 2 of 5</div>
-                        <% if current_user.administrator? %>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <%= button_to edit_admin_category_path(category), method: :get, class: "btn btn-warning btn-sm" do %>
-                                            edit
-                                        <% end %>
-                                    </td>
-                                    <td>
-                                        <%= button_to admin_category_path(category), method: :delete, class: "btn btn-dark btn-sm",
-                                                            data: { confirm: "You sure?" } do %>
-                                            Delete
-                                        <% end %>
-                                    </td>
-                                </tr>
-                            </table>
-                        <% end %>
+
+                    <%# <div class="badge badge-secondary float-right">
+                        <span><b>Words:</b> <%= @category.words.count %>
+                       
                     <h4 class="card-title">
                         <%= category.title %>
                     </h4>
@@ -30,13 +16,13 @@
                     </p>
                     <div class="mt-5">
                         <a class="btn btn-outline-secondary btn-block" href="/lessons/120">
-                            <i class="glyphicon glyphicon-record"></i>
-                            Show result
+                            <%#<i class="glyphicon glyphicon-record"></i> %>
+                            Learn
                         </a>
                     </div>
                 </div>
             </article>
         </div>
     <% end %>  
-    </div>
+</div>
     

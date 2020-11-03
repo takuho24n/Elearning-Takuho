@@ -3,14 +3,18 @@ class Admin::CategoriesController < ApplicationController
   before_action :admin_user
   before_action :require_admin
   
-  def index
-    @categories = Category.all
+  def index # Shows all categories
+    # @categories = Category.all
     @categories = Category.paginate(page: params[:page], per_page: 10)
+    # @categories = Category.find(params[:category_id])
+    # @words = @category.words.find(params[:category_id])
+    # @word = Word.find(params[:word_id])
+
+  
   end
 
-  def show
-    @categories = Category.paginate(page: params[:page], per_page: 10)
-    #@categories = Category.find(params[:id])
+  def show # Display 1 category
+    @category = Category.find(params[:id])
   end
 
   def new
@@ -20,6 +24,7 @@ class Admin::CategoriesController < ApplicationController
   def edit
     #@categories = Category.all
     @category = Category.find(params[:id])
+   # @word = Word.find(params[:word_id])
   end
   
   def create
@@ -28,13 +33,14 @@ class Admin::CategoriesController < ApplicationController
         flash[:success] = "Save successfully"
         redirect_to admin_categories_url
       else
-        #flash[:danger = "Invaild content. Try again"
+        flash[:danger] = "Invaild content. Try again"
         render 'new'
      end
   end
 
   def update
     @category = Category.find(params[:id])
+    #@word = Word.find(params[:word_id])
 
     if @category.update_attributes(category_params)
       redirect_to admin_category_url
