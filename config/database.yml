@@ -38,3 +38,9 @@ production:
   database: taku-elearning_production
   username: taku-elearning
   password: <%= ENV['TAKU-ELEARNING_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

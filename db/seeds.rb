@@ -40,7 +40,7 @@ Category.create!(title: "Cookies",
     title = Faker::Beer.brand
     description = "Do you like #{n+2} to drink?"
     words = Faker::Beer.style
-    
+  
     category = Category.create!(title: title, description: description)
     
     word = Word.create!(words: words, category_id: category.id )
@@ -48,23 +48,24 @@ Category.create!(title: "Cookies",
 
  
  #words
-  Word.create!(words: "Orange",
-  category_id: 1)
+  Word.create!(words: "Orange",category_id: 1)
+  Word.create!(words: "Pink Orange",category_id: 1)
+  Word.create!(words: "Yellow Orange",category_id: 2)
+  Word.create!(words: "Spicy Orange",category_id: 2)
+  Word.create!(words: "Bitter Orange",category_id: 3)
+  Word.create!(words: "Salty Orange",category_id: 4)
 
-  Word.create!(words: "Pink Orange",
-  category_id: 1)
+  #Choice
+  Choice.create!(content: "Lion Lemon", correct: true, word_id: 1)
+  Choice.create!(content: "Tiger Lemon", correct: false, word_id: 1)
+  Choice.create!(content: "Cat Lemon", correct: false, word_id: 1)
+  Choice.create!(content: "Dog Lemon", correct: false, word_id: 2)
+  Choice.create!(content: "Wolf Lemon", correct: false, word_id: 2)
+  Choice.create!(content: "Fox Lemon", correct: true, word_id: 2)
+  Choice.create!(content: "Horse Lemon", correct: false, word_id: 3)
+  Choice.create!(content: "Donky Lemon", correct: true, word_id: 3)
+  Choice.create!(content: "Zebra Lemon", correct: false, word_id: 3)
 
-  Word.create!(words: "Yellow Orange",
-  category_id: 2)
-
-  Word.create!(words: "Spicy Orange",
-    category_id: 2)
-
-  Word.create!(words: "Bitter Orange",
-    category_id: 3)
-
-  Word.create!(words: "Salty Orange",
-    category_id: 4)
 # 30.times do |n|
 #   words = Faker::Beer.style
 #   category_id = [1..10]
